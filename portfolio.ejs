@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/portfolio">Portfolio</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Your Portfolio</h1>
+    <div class="portfolio-items">
+      <% items.forEach(item => { %>
+        <div class="portfolio-item">
+          <h2><%= item.title %></h2>
+          <p><%= item.description %></p>
+          <div class="carousel">
+            <% item.images.forEach(image => { %>
+              <img src="<%= image %>" alt="<%= item.title %>">
+            <% }) %>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+</body>
+</html>
